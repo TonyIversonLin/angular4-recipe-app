@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.btn-group.open .dropdown-menu, .dropdown.open .dropdown-menu {
+  display: initial;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+}
