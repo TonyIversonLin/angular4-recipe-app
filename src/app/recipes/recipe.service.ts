@@ -5,7 +5,7 @@ import { Ingredient } from '../shared/ingredient.model';
 
 
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe(
@@ -28,6 +28,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();   // only return copy
+  }
+
+  getSelectedRecipe(id: number) {
+    return this.recipes.slice()[id];
   }
 
 
