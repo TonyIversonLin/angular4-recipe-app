@@ -12,9 +12,10 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a routerLink="signup">Register</a></li>
-				<li><a routerLink="signin">Sign In</a></li>
-				<li class="dropdown" appDropdown>
+				<li><a routerLink="signup" *ngIf="!isAuth()">Register</a></li>
+				<li><a routerLink="signin" *ngIf="!isAuth()">Sign In</a></li>
+				<li><a (click)="signOut()" *ngIf="isAuth()" style="cursor: pointer">Sign Out</a></li>
+				<li class="dropdown" appDropdown *ngIf="isAuth()">
 					<a style="cursor: pointer" class="dropdown-toggle" role="button"><span class="caret"></span>Manage</a>
 					<ul class="dropdown-menu">
 						<li><a style="cursor: pointer" (click)="onSaveData()">Save Data</a></li>
